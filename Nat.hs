@@ -1,6 +1,11 @@
 module Nat where
 
-import Prelude
+import Prelude (
+        Bool(..), 
+        Show(..), (++),
+        Eq(..), Ord(..), Ordering(..),
+        Num(..), Integer, error)
+
 data Nat = Zero | Succ Nat
     deriving (Show)
 
