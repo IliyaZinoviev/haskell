@@ -1,10 +1,11 @@
 module Nat where
 
 import Prelude (
-        Bool(..), 
+        Bool(..),
         Show(..), (++),
         Eq(..), Ord(..), Ordering(..),
-        Num(..), Integer, error)
+        Num(..), Integer, error, ($), not,
+        otherwise, (||))
 
 data Nat = Zero | Succ Nat
     deriving (Show)
@@ -47,7 +48,7 @@ beside::Nat->Nat->Bool
 beside a b = a == Succ b || Succ a == b
 
 beside2 :: Nat -> Nat -> Bool
-beside2 a b = not (beside a b)
+beside2 a b = not $ beside a b
 
 pow :: Nat -> Nat -> Nat
 pow a Zero = Succ Zero
